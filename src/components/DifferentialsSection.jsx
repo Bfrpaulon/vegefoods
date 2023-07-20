@@ -1,68 +1,78 @@
-import React, { useState, useEffect } from "react";
-import { Badge, Icon, Tooltip } from "@material-ui/core";
-import { spring } from "react-spring";
-import { bootstrap } from "react-icons/bootstrap";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import { Avatar } from '@material-ui/core';
+import { FaTruck, FaLeaf, FaStar, FaHeadset } from 'react-icons/fa';
 
-const Differentials = () => {
-  const [badges, setBadges] = useState([
-    {
-      icon: <Icon icon="shopping-cart" />,
-      name: "Free Shipping",
-      description: "On order over $100",
-      color: "primary",
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    flexDirection: 'column',
+    textAlign: 'center',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: theme.spacing(2),
+    borderRadius: theme.spacing(2),
+    backgroundColor: '#f5f5f5',
+    margin: theme.spacing(6),
+    width: '100%',
+    '&:not(:last-child)': {
+      marginRight: theme.spacing(2),
     },
-    {
-      icon: <Icon icon="fresh" />,
-      name: "Always Fresh",
-      description: "Product well package",
-      color: "success",
+  },
+  iconCircle: {
+    width: '48px',
+    height: '48px',
+    borderRadius: '50%',
+    background: 'var(--primary-100)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+    transition: 'background-color 0.3s ease',
+    '&:hover': {
+      background: 'var(--primary-200)',
     },
-    {
-      icon: <Icon icon="star" />,
-      name: "Superior Quality",
-      description: "Quality Products",
-      color: "warning",
+  },
+  icon: {
+    fontSize: '24px',
+    color: 'var(--accent-200)',
+    transition: 'color 0.3s ease',
+    '&:hover': {
+      color: 'var(--accent-100)',
     },
-    {
-      icon: <Icon icon="support" />,
-      name: "Support",
-      description: "24/7 Support",
-      color: "danger",
-    },
-  ]);
+  },
+}));
 
-  useEffect(() => {
-    // Set the initial state of the badges
-    setBadges(
-      badges.map((badge) => ({
-        ...badge,
-        hoverColor: badge.color.light,
-      }))
-    );
-  }, []);
+const DifferentialsSection = () => {
+  const classes = useStyles();
+
+  const differentials = [
+    { title: 'Free Shipping', description: 'Get free shipping on all orders.', icon: <FaTruck /> },
+    { title: 'Always Fresh', description: 'Our products are always fresh and tasty.', icon: <FaLeaf /> },
+    { title: 'Superior Quality', description: 'We offer products of superior quality.', icon: <FaStar /> },
+    { title: '24/7 Support', description: 'Customer support available 24/7.', icon: <FaHeadset /> },
+  ];
 
   return (
-    <section className="ftco-section">
-      <div className="container">
-        <div className="row no-gutters ftco-services">
-          {badges.map((badge) => (
-            <div key={badge.name} className="col-md-3 text-center d-flex align-self-stretch ftco-animate fadeInUp ftco-animated">
-              <Badge
-                key={badge.name}
-                color={badge.color}
-                hoverColor={badge.hoverColor}
-              >
-                <Tooltip title={badge.description} placement="right">
-                  <Icon size="small" color="inherit" {...badge.icon} />
-                </Tooltip>
-                <div style={{ paddingLeft: 8 }}>{badge.name}</div>
-              </Badge>
-            </div>
-          ))}
+    <div style={{ display: 'flex' }}>
+      {differentials.map((differential, index) => (
+        <div key={index} className={classes.root}>
+          <div className={classes.iconCircle}>
+            <Avatar className={classes.iconCircle}>
+              <span className={classes.icon}>
+                {differential.icon}
+              </span>
+            </Avatar>
+          </div>
+          <div style={{ marginLeft: '20px' }}>
+            <Typography variant="h6">{differential.title}</Typography>
+            <Typography variant="body2">{differential.description}</Typography>
+          </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
   );
 };
 
-export default Differentials;
+export default DifferentialsSection;

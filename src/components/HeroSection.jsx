@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const images = [
-  'https://img.freepik.com/free-photo/basket-vegetables-is-fridge-with-red-handle_1340-37257.jpg?t=st=1689851069~exp=1689854669~hmac=5579b76115be4a2d647ac6d7338cbc44bc406221d0ec37341804610929824ccb&w=740',
+  'https://img.freepik.com/free-photo/fresh-fruit-veggies-rustic-table-arrangement-generated-by-ai_188544-40627.jpg?t=st=1689860734~exp=1689864334~hmac=3e72c3690fbe2db69caa0675f68d3321dde2a0dd2a469189150d77b48d7ff42c&w=900',
   'https://img.freepik.com/free-photo/healthy-vegetarian-salad-with-fresh-organic-ingredients-generated-by-ai_24640-80622.jpg?t=st=1689852560~exp=1689856160~hmac=54c997f395e4c35c844b97d6eb5cb900320d29707ea6333ebb7ef79179014b1a&w=900',
 ];
 
@@ -53,7 +53,6 @@ const HeroSection = () => {
   const transitions = useTransition(currentImageIndex, {
     from: { opacity: 0, transform: 'translate3d(0, 50px, 0)' },
     enter: { opacity: 1, transform: 'translate3d(0, 0, 0)' },
-    leave: { opacity: 0, transform: 'translate3d(0, -50px, 0)' },
   });
 
   useEffect(() => {

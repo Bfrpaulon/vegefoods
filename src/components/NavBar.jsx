@@ -7,6 +7,7 @@ import { Home, Info, Create, Mail } from '@material-ui/icons';
 const useStyles = makeStyles((theme) => ({
   header: {
     display: 'flex',
+    maxHeight: '100px',
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: theme.spacing(2),
