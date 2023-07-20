@@ -6,6 +6,8 @@ import GalleryImage from "../components/GalleryImage";
 import FeaturedProducts from "../components/FeaturedProducts";
 import DealOfTheDay from "../components/DealOfTheDay";
 import TestimonialSection from "../components/TestimonialSection";
+import NewsletterSection from "../components/NewsletterSection";
+
 const HomePage = () => {
   return (
     <Layout>
@@ -15,6 +17,7 @@ const HomePage = () => {
       <FeaturedProducts />
       <DealOfTheDay />
       <TestimonialSection  />
+      <NewsletterSection />
     </Layout>
   );
 };
