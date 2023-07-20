@@ -1,48 +1,87 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSpring, animated } from 'react-spring';
+import { makeStyles } from '@material-ui/core/styles';
 import { Home, Info, Create, Mail } from '@material-ui/icons';
 
+const useStyles = makeStyles((theme) => ({
+  header: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    padding: theme.spacing(2),
+    backgroundColor: '#FFC107', // bg-300
+    color: '#333333', // text-300
+    boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.1)', // Add shadow
+    borderRadius: '8px', // Rounded corners
+  },
+  logo: {
+    width: 200,
+    height: 60,
+    marginRight: theme.spacing(2),
+  },
+  navLinks: {
+    display: 'flex',
+    alignItems: 'center',
+    listStyle: 'none',
+    margin: 0,
+    padding: 0,
+  },
+  link: {
+    display: 'flex',
+    alignItems: 'center',
+    color: '#FFFFFF', // common white
+    textDecoration: 'none',
+    marginLeft: theme.spacing(2),
+    padding: theme.spacing(1),
+    borderRadius: '4px', // Rounded corners for links
+    transition: 'background-color 0.2s ease', // Smooth background-color transition on hover
+    '&:hover': {
+      backgroundColor: '#4CAF50', // primary-100 on hover
+      textDecoration: 'none',
+    },
+  },
+}));
+
 const Navbar = () => {
+  const classes = useStyles();
+
   const styles = useSpring({
     from: { opacity: 0, transform: 'translateY(-10px)' },
     to: { opacity: 1, transform: 'translateY(0)' },
-    config: { duration: 500 },
   });
 
   return (
-    <animated.header style={styles}>
-      <nav className="flex items-center justify-between flex-wrap p-4 bg-primary-200">
-        <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <img src="logo.png" alt="VEGEFOODS" className="w-8 h-8" />
-        </div>
-        <ul className="flex justify-end space-x-4">
-          <li>
-            <Link to="/" className="text-white">
-              <Home />
-              HOME
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="text-white">
-              <Info />
-              ABOUT
-            </Link>
-          </li>
-          <li>
-            <Link to="/blog" className="text-white">
-              <Create />
-              BLOG
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="text-white">
-              <Mail />
-              CONTACT
-            </Link>
-          </li>
-        </ul>
-      </nav>
+    <animated.header className={classes.header} style={styles}>
+      <div className={classes.logo}>
+        <img src="https://i.postimg.cc/QCvRQfsp/logo-3.png" alt="VEGEFOODS" className={classes.logo} />
+      </div>
+      <ul className={classes.navLinks}>
+        <li>
+          <Link to="/" className={classes.link}>
+            <Home />
+            HOME
+          </Link>
+        </li>
+        <li>
+          <Link to="/about" className={classes.link}>
+            <Info />
+            ABOUT
+          </Link>
+        </li>
+        <li>
+          <Link to="/blog" className={classes.link}>
+            <Create />
+            BLOG
+          </Link>
+        </li>
+        <li>
+          <Link to="/contact" className={classes.link}>
+            <Mail />
+            CONTACT
+          </Link>
+        </li>
+      </ul>
     </animated.header>
   );
 };
