@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Typography, Button } from '@material-ui/core';
-import { useSpring, animated, useTransition } from 'react-spring';
+import { animated, useTransition } from 'react-spring';
 
 const useStyles = makeStyles((theme) => ({
   container: {
