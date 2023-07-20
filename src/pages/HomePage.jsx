@@ -4,6 +4,8 @@ import HeroSection from "../components/HeroSection";
 import Differentials from "../components/DifferentialsSection";
 import GalleryImage from "../components/GalleryImage";
 import FeaturedProducts from "../components/FeaturedProducts";
+import DealOfTheDay from "../components/DealOfTheDay";
+import TestimonialSection from "../components/TestimonialSection";
 const HomePage = () => {
   return (
     <Layout>
@@ -11,6 +13,8 @@ const HomePage = () => {
       <Differentials />
       <GalleryImage />
       <FeaturedProducts />
+      <DealOfTheDay />
+      <TestimonialSection  />
     </Layout>
   );
 };
