@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: theme.spacing(2),
-    backgroundColor: '#FFC107', // bg-300
-    color: '#333333', // text-300
+    backgroundColor: '#F2F2F2', // --bg-100:#F2F2F2;
+    color: '#333333',
     boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.1)', // Add shadow
     borderRadius: '8px', // Rounded corners
   },
@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
   link: {
     display: 'flex',
     alignItems: 'center',
-    color: '#FFFFFF', // common white
+    color: '#333333',
     textDecoration: 'none',
     marginLeft: theme.spacing(2),
     padding: theme.spacing(1),

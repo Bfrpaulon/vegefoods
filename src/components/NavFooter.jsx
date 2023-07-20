@@ -1,11 +1,70 @@
-import React from 'react'
+import React from 'react';
+import { Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import { ArrowUpward as ArrowUpwardIcon, Facebook as FacebookIcon, Instagram as InstagramIcon, Twitter as TwitterIcon } from '@material-ui/icons';
+import { useSpring, animated } from 'react-spring';
+
+const useStyles = makeStyles((theme) => ({
+  footer: {
+    backgroundColor: '#F2F2F2',
+    color: '#333333',
+    padding: '20px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
+  contactInfo: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start',
+  },
+  socialIcons: {
+    display: 'flex',
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+  backToTopButton: {
+    background: '#FFC107',
+    color:  '#333333',
+    borderRadius: '4px',
+    padding: '10px 20px',
+    border: 'none',
+    cursor: 'pointer',
+  },
+}));
 
 const NavFooter = () => {
-  return (
-    <div>
-      footer
-    </div>
-  )
-}
+  const classes = useStyles();
 
-export default NavFooter
+  // React Spring animation
+  const springProps = useSpring({ opacity: 1, from: { opacity: 0 }, delay: 100 });
+
+  const handleBackToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <animated.footer className={classes.footer} style={springProps}>
+      <Button className={classes.backToTopButton} onClick={handleBackToTop}>
+        <ArrowUpwardIcon />
+      </Button>
+      <div className={classes.socialIcons}>
+        {/* Coloque aqui os ícones das mídias sociais */}
+        <a href='www.facebook.com'><FacebookIcon/></a> 
+        <a href='www.instagram.com'><InstagramIcon /></a>
+        <a href='www.twitter.com'><TwitterIcon /></a>
+        <p>
+        Copyright © {new Date().getFullYear()} Todos os direitos reservados | VegeFoods Inc
+      </p>
+      </div>
+      <div className={classes.contactInfo}>
+        <p>203 Fake St. Mountain View, São Francisco, Califórnia, EUA</p>
+        <p>+2 392 3929 210</p>
+        <p>info@VegeFoods.com</p>
+      </div>
+    </animated.footer>
+  );
+};
+
+export default NavFooter;

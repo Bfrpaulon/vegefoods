@@ -1,6 +1,12 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:react-icons/bootstrap.git",
+    "username": "bfrpaulon",
+    "password": "Bfrp1997!"
+  },
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
@@ -12,8 +18,10 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "flaticon": "^0.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.10.1",
     "react-router-dom": "^6.14.2",
     "react-scripts": "5.0.1",
     "react-spring": "^9.7.2",
