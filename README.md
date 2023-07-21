@@ -6,14 +6,14 @@ Welcome to VegeFoods, an e-commerce and food delivery website specializing in ve
 
 ## Content
 
-- [Overview](https://chat.openai.com/?model=text-davinci-002-render-sha#vis%C3%A3o-geral)
-     - [Description](https://chat.openai.com/?model=text-davinci-002-render-sha#descri%C3%A7%C3%A3o)
-     - [Functionalities](https://chat.openai.com/?model=text-davinci-002-render-sha#functionalities)
-     - [Used Technologies](https://chat.openai.com/?model=text-davinci-002-render-sha#utilized technologies)
-- [Installation](https://chat.openai.com/?model=text-davinci-002-render-sha#installs%C3%A7%C3%A3o)
-- [Usage](https://chat.openai.com/?model=text-davinci-002-render-sha#usage)
-- [Contribution](https://chat.openai.com/?model=text-davinci-002-render-sha#contribution%C3%A7%C3%A3o)
-- [License](https://chat.openai.com/?model=text-davinci-002-render-sha#licen%C3%A7a)
+- [Overview]()
+     - [Description]
+     - [Functionalities]
+     - [Used Technologies]
+- [Installation]
+- [Usage]
+- [Contribution]
+- [License]
 
 ## Overview
 
@@ -80,7 +80,7 @@ Contributions are welcome! If you want to improve VegeFoods, follow the steps be
 
 ## License
 
-This project is licensed under the [MIT License](https://chat.openai.com/link_to_license_file), which means you can freely use, modify and distribute it as you need.
+This project is licensed under the [MIT License](), which means you can freely use, modify and distribute it as you need.
 
 ----------
 
