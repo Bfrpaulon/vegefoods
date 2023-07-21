@@ -14,10 +14,16 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     borderRadius: theme.spacing(2),
     backgroundColor: '#f5f5f5',
-    margin: theme.spacing(6),
+    margin: theme.spacing(2), // Decrease the margin for smaller screens
     width: '100%',
     '&:not(:last-child)': {
-      marginRight: theme.spacing(2),
+      marginRight: theme.spacing(0), // Remove margin for smaller screens
+    },
+    [theme.breakpoints.up('md')]: {
+      flexDirection: 'row', // Set flex direction to row for larger screens
+      width: 'auto', // Set a fixed width for larger screens
+      alignItems: 'center',
+      justifyContent: 'center',
     },
   },
   iconCircle: {
@@ -32,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
     transition: 'background-color 0.3s ease',
     '&:hover': {
       background: 'var(--primary-200)',
+    },
+    [theme.breakpoints.up('md')]: {
+      margin: theme.spacing(2), // Add margin for larger screens
     },
   },
   icon: {
@@ -55,7 +64,7 @@ const DifferentialsSection = () => {
   ];
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
       {differentials.map((differential, index) => (
         <div key={index} className={classes.root}>
           <div className={classes.iconCircle}>

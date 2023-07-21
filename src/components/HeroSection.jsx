@@ -11,9 +11,12 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    height: '500px',
+    height: 'auto',
     backgroundColor: '#f2f2f2',
     overflow: 'hidden',
+    [theme.breakpoints.up('sm')]: {
+      height: '500px', // Set a fixed height for larger screens
+    },
   },
   image: {
     width: '100%',
@@ -22,12 +25,16 @@ const useStyles = makeStyles((theme) => ({
   },
   textContainer: {
     position: 'absolute',
-    bottom: '50px',
+    bottom: '30px', // Adjust the distance from the bottom
     textAlign: 'center',
     width: '100%',
     fontFamily: 'Cursive',
-    fontSize: '48px',
+    fontSize: '28px', // Decrease font size for smaller screens
     color: ' #4CAF50',
+    [theme.breakpoints.up('sm')]: {
+      bottom: '50px', // Set a larger distance from the bottom for larger screens
+      fontSize: '48px', // Restore the font size for larger screens
+    },
   },
   button: {
     marginTop: '10px',
