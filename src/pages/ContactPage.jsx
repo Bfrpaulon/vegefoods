@@ -1,12 +1,15 @@
 import React from "react";
 import Layout from "../components/Layout";
+import HeroSection from "../components/HeroSection";
+import ContactSection from "../components/ContactSection";
 
-const ContactPage = () => {
+const HomePage = () => {
   return (
     <Layout>
-      <h1>ContactPage</h1>
+      <HeroSection />
+      <ContactSection />
     </Layout>
   );
 };
 
-export default ContactPage;
+export default HomePage;
