@@ -13,24 +13,20 @@ const useStyles = makeStyles((theme) => ({
   },
   testimonial: {
     textAlign: 'center',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
     padding: 15,
-    minWidth: 400,
-    maxWidth: 400,
     margin: '10px auto',
     backgroundColor: '#e8e8e8',
     borderRadius: theme.spacing(2),
     boxShadow: theme.shadows[3],
+    width: '100%', // Added width for mobile responsiveness
+    [theme.breakpoints.up('sm')]: {
+      minWidth: 400,
+      maxWidth: 400,
+    },
   },
   userImg: {
-    textAlign: 'center',
-    display: 'flex',
-    justifyContent: 'center',
-    margin: 'auto',
     width: 100,
+    margin: 'auto',
     height: 100,
     borderRadius: '50%',
     backgroundSize: 'cover',
@@ -128,19 +124,21 @@ const TestimonialSection = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
     responsive: [
       {
         breakpoint: 768,
         settings: {
+          width: '100%',
           slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 992,
+        breakpoint: 500,
         settings: {
-          slidesToShow: 2,
+          width: '100%',
+          slidesToShow: 1,
           slidesToScroll: 1,
         },
       },

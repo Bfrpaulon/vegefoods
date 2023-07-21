@@ -77,7 +77,6 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '16px',
     marginBottom: '16px',
   },
-
   flagDiscount: {
     backgroundColor: 'red',
     color: 'white',
@@ -91,14 +90,19 @@ const useStyles = makeStyles((theme) => ({
     width: '30%',
     clipPath: 'polygon(100% 0, 100% 50%, 100% 100%, 0% 100%, 10% 50%, 0% 0%)',
     transform: 'skewY(-0deg)',
+    [theme.breakpoints.up('md')]: {
+      width: '15%', // Adjust the flag's width for larger screens
+    },
   },
-
   gridContainer: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
+    gridTemplateColumns: 'repeat(1, 1fr)', // Set one column for smaller screens
     gap: '24px',
+    [theme.breakpoints.up('sm')]: {
+      gridTemplateColumns: 'repeat(2, 1fr)', // Set two columns for small screens and above
+    },
     [theme.breakpoints.up('md')]: {
-      gridTemplateColumns: 'repeat(4, 1fr)',
+      gridTemplateColumns: 'repeat(4, 1fr)', // Set four columns for medium screens and above
     },
   },
   card: {
@@ -110,7 +114,6 @@ const useStyles = makeStyles((theme) => ({
       boxShadow: '0px 8px 20px rgba(0, 0, 0, 0.2)',
     },
   },
-
   cardMedia: {
     height: '200px',
     transition: 'transform 0.3s ease-in-out',
@@ -174,14 +177,14 @@ const useStyles = makeStyles((theme) => ({
 const FeaturedProducts = () => {
   const classes = useStyles();
 
-
   return (
     <section className={classes.container}>
       <div className="container mx-auto">
         {/* 30% Discount Section */}
         <div className="mb-12">
           <div className={classes.flagDiscount}>
-            <h2 className={classes.discountTitle}>30% Discount</h2></div>
+            <h2 className={classes.discountTitle}>30% Discount</h2>
+          </div>
           <div className={classes.gridContainer}>
             {products
               .filter((product) => product.discount === 30)
@@ -223,7 +226,8 @@ const FeaturedProducts = () => {
 
         {/* 50% Discount Section */}
         <div>
-          <div className={classes.flagDiscount}><h2 className={classes.discountTitle}>50% Discount</h2>
+          <div className={classes.flagDiscount}>
+            <h2 className={classes.discountTitle}>50% Discount</h2>
           </div>
           <div className={classes.gridContainer}>
             {products
@@ -264,7 +268,6 @@ const FeaturedProducts = () => {
           </div>
         </div>
       </div>
-      
     </section>
   );
 };
