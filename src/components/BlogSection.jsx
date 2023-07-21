@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Grid, Typography, Button } from '@material-ui/core';
-import { useSpring, animated, useScrollTrigger, Slide } from 'react-spring';
+import { useSpring, animated } from 'react-spring';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
@@ -127,10 +127,9 @@ const BlogEntry = ({ imageUrl, date, author, chatCount, heading, content }) => {
         <Typography variant="body1" className={classes.paragraph}>
           {content}
         </Typography>
-        <Button variant="contained" className={classes.readMoreButton}>
-          Read more
-        </Button>
+        <Button variant="contained" className={classes.readMoreButton}>Read more </Button>
       </div>
+      
     </animated.div>
   );
 };
@@ -156,16 +155,16 @@ const BlogSection = () => {
               <h3 className="heading">Categories</h3>
               <ul className={classes.categoriesList}>
                 <li className={classes.categoryItem}>
-                  <a href="#">Vegetables <span>(12)</span></a>
+                  <button>Vegetables <span>(12)</span></button>
                 </li>
                 <li className={classes.categoryItem}>
-                  <a href="#">Fruits <span>(22)</span></a>
+                  <button>Fruits <span>(22)</span></button>
                 </li>
                 <li className={classes.categoryItem}>
-                  <a href="#">Juice <span>(37)</span></a>
+                  <button>Juice <span>(37)</span></button>
                 </li>
                 <li className={classes.categoryItem}>
-                  <a href="#">Dries <span>(42)</span></a>
+                  <button>Dries <span>(42)</span></button>
                 </li>
               </ul>
             </div>
@@ -173,28 +172,28 @@ const BlogSection = () => {
               <h3 className="heading">Tag Cloud</h3>
               <ul className={classes.tagcloud}>
                 <li>
-                  <a href="#" className={classes.tagLink}>fruits</a>
+                  <button href="#" className={classes.tagLink}>fruits</button>
                 </li>
                 <li>
-                  <a href="#" className={classes.tagLink}>tomatoe</a>
+                  <button href="#" className={classes.tagLink}>tomatoe</button>
                 </li>
                 <li>
-                  <a href="#" className={classes.tagLink}>mango</a>
+                  <button href="#" className={classes.tagLink}>mango</button>
                 </li>
                 <li>
-                  <a href="#" className={classes.tagLink}>apple</a>
+                  <button href="#" className={classes.tagLink}>apple</button>
                 </li>
                 <li>
-                  <a href="#" className={classes.tagLink}>carrots</a>
+                  <button href="#" className={classes.tagLink}>carrots</button>
                 </li>
                 <li>
-                  <a href="#" className={classes.tagLink}>orange</a>
+                  <button href="#" className={classes.tagLink}>orange</button>
                 </li>
                 <li>
-                  <a href="#" className={classes.tagLink}>pepper</a>
+                  <button href="#" className={classes.tagLink}>pepper</button>
                 </li>
                 <li>
-                  <a href="#" className={classes.tagLink}>eggplant</a>
+                  <button href="#" className={classes.tagLink}>eggplant</button>
                 </li>
               </ul>
             </div>
